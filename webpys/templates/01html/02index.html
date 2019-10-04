@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <title>这是注册</title>
+{#    <link rel="stylesheet" type="text/css" href="{%static 'webpage/css/aa.css'%}">#}
+{#    <script type="text/javascript" src="{%static 'webpage/js/jquery1.js'%}"></script>#}
+{#     <script type="text/javascript" src="{%static 'webpage/js/aa.js'%}"></script>#}
+{#http://127.0.0.1:8000/static/webpage/js/aa.js#}
+
+</head>
+<body>
+ <h1>
+
+     <a href="logout/">注销</a></h1>
+     <h1>当前用户:{{request.session.user_info.nickname}}-------利用session获取用户名方式二</h1>
+      <h1>当前用户:{{sess_nickname}}-------利用session获取用户名方式一</h1>
+
+{#   {% include "01html/out_other.html" %}#}
+
+  <h3>异性列表</h3>
+  <h3>{{ user_list }}</h3>
+   <a href="other/">查看当前用户对应的异性</a>
+<ul>
+  {% for row in user_list %}
+      <li> {{row.nickname  }}</li>
+  {% endfor %}
+
+</ul>
+
+</body>
+</html>

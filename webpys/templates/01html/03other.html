@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>显示哈哈哈</title>
+</head>
+<body>
+<h1>有关系的异性列表</h1>
+{% include "01html/out_other.html" %}
+<ul>
+    {% for rew in user_list %}
+        {% if rew.g__nickname %}
+            <li>{{ rew.g__nickname }}</li>
+        {% else %}
+            <li>{{ rew.b__nickname }}</li>
+        {% endif %}
+    {% endfor %}
+
+</ul>
+</body>
+</html>
